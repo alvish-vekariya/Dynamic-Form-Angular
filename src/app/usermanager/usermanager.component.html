@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col min-vh-100">
+            <div class="card">
+                <div class="card-body">
+                    <form action="" [formGroup]="myForm" (submit)="submitForm()">
+                        <label for="username">Username :</label>
+                        <input type="text" name="" id="username" formControlName="username" class="form-control"><br>
+                        <label for="email">Email : </label>
+                        <input type="email" name="" id="email" formControlName="email" class="form-control"><br>
+                        <label for="">Address:</label>
+                        <button type="button" class="btn btn-secondary ms-5" (click)="addAddress()">Add Address</button><br>
+                        <!-- <div>
+                            <input type="text" class="form-control" placeholder="street" id="" formControlName="street">
+                            <input type="text" class="form-control" placeholder="city" id="" formControlName="city">
+                            <input type="text" class="form-control" placeholder="state" id="" formControlName="state">
+                            <input type="number" class="form-control" placeholder="zipcode" id="" formControlName="zipcode">
+                        </div><br> -->
+                        <div class="text-center">
+                            <input type="submit" value="Submit" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
