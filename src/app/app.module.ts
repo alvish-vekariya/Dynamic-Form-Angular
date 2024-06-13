@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UsermanagerComponent } from './usermanager/usermanager.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DatatableComponent } from './datatable/datatable.component';
+import { AgGridAngular } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsermanagerComponent
+    UsermanagerComponent,
+    DatatableComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    AgGridAngular
   ],
   providers: [],
   bootstrap: [AppComponent]
