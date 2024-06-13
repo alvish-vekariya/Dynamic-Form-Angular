@@ -31,16 +31,20 @@ export class UsermanagerComponent {
     })
   }
 
+  @Output() addEvent = new EventEmitter<string>();
   addAddress(){
     this.addressList.push(this.createAddress());
+    this.addEvent.emit('Address Fieled Added!!')
   }
 
+  @Output() removeEvent = new EventEmitter<string>();
   removeAddress(i : any){
     this.addressList.removeAt(i);
+    this.removeEvent.emit('Address Field Removed!!');
   }
 
   submitForm(){
-    console.log(this.myForm.controls.addresses.value);
+    // console.log(this.myForm.controls.addresses.value);
     this.sendData.emit(this.myForm.value);
     this.addressList.clear();
     this.myForm.reset();

@@ -18,8 +18,16 @@ export class AppComponent implements OnInit {
     }
   }
 
+  removeAlert(msg : string){
+    console.log(msg);
+  }
+
+  addAlert(msg : string){
+    console.log(msg);
+  }
+
   getFormData(value :any){
-    console.log(value);
+    // console.log(value);
     this.userData = [...this.userData, value];
     localStorage.setItem('userformData', JSON.stringify(this.userData));
   }
