@@ -2,6 +2,9 @@
     <div class="row d-flex justify-content-center mt-4">
         <div class="col-6">
             <div class="card">
+                <div class="card-header text-center">
+                    <h1>Dynamic Form</h1>
+                </div>
                 <div class="card-body">
                     <form action="" [formGroup]="myForm" (submit)="submitForm()">
                         <div class="row">
@@ -73,16 +76,14 @@
                 </div>
             </div>
             <hr>
-            <div class="row mt-3">
+            <div class="row mt-3 d-flex justify-content-center">
                 <div class="row">
                     <div class="col">
                         <h3>All Persons Data:</h3>
                     </div>
                 </div>
                 <div class="row mt-2">
-                    <div class="col">
-                        <app-datatable [tableData]="ReceivedData"></app-datatable>
-                    </div>
+                    <app-datatable [tableData]="ReceivedData"></app-datatable>
                 </div>
             </div>
         </div>
