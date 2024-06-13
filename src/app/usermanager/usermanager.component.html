@@ -50,16 +50,28 @@
                         <div class="row" formArrayName="addresses">
                             <div class="row mt-2" *ngFor="let add of addressList.controls; let i = index" [formGroupName]="i">
                                 <div class="col-3">
-                                    <textarea name="" id="" formControlName="street" class="form-control" placeholder="street" rows="1"></textarea>
+                                    <textarea name="" id="" formControlName="street" class="form-control" placeholder="street" rows="1" [ngClass]="{'is-invalid': myForm.controls.addresses.controls[i].controls.street.touched && myForm.controls.addresses.controls[i].controls.street.errors}"></textarea>
+                                    <div *ngIf="myForm.controls.addresses.controls[i].controls.street.errors" class="invalid-feedback">
+                                        <span *ngIf="myForm.controls.addresses.controls[i].controls.street.errors?.['required']">**required</span>
+                                    </div>
                                 </div>
                                 <div class="col-3">
-                                    <input type="text" formControlName="city" class="form-control" placeholder="city">
+                                    <input type="text" formControlName="city" class="form-control" placeholder="city" [ngClass]="{'is-invalid': myForm.controls.addresses.controls[i].controls.city.touched && myForm.controls.addresses.controls[i].controls.city.errors}">
+                                    <div *ngIf="myForm.controls.addresses.controls[i].controls.city.errors" class="invalid-feedback">
+                                        <span *ngIf="myForm.controls.addresses.controls[i].controls.city.errors?.['required']">**required</span>
+                                    </div>
                                 </div>
                                 <div class="col-3">
-                                    <input type="text" formControlName="state" class="form-control" placeholder="state">
+                                    <input type="text" formControlName="state" class="form-control" placeholder="state" [ngClass]="{'is-invalid': myForm.controls.addresses.controls[i].controls.state.touched && myForm.controls.addresses.controls[i].controls.state.errors}">
+                                    <div *ngIf="myForm.controls.addresses.controls[i].controls.state.errors" class="invalid-feedback">
+                                        <span *ngIf="myForm.controls.addresses.controls[i].controls.state.errors?.['required']">**required</span>
+                                    </div>
                                 </div>
                                 <div class="col-2">
-                                    <input type="number" formControlName="zip" class="form-control" min="0" placeholder="zipcode">
+                                    <input type="number" minlength="6" formControlName="zip" class="form-control" min="0" placeholder="zipcode" [ngClass]="{'is-invalid': myForm.controls.addresses.controls[i].controls.zip.touched && myForm.controls.addresses.controls[i].controls.zip.errors}">
+                                    <div *ngIf="myForm.controls.addresses.controls[i].controls.zip.errors" class="invalid-feedback">
+                                        <span *ngIf="myForm.controls.addresses.controls[i].controls.zip.errors?.['required']">**required</span>
+                                    </div>
                                 </div>
                                 <div class="col-1" >
                                     <div>

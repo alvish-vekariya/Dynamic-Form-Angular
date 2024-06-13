@@ -27,7 +27,7 @@ export class UsermanagerComponent {
       street: ['', Validators.required],
       city:['', Validators.required],
       state: ['', Validators.required],
-      zip: ['',[ Validators.required, Validators.maxLength(6)]]
+      zip: ['',[ Validators.required, Validators.minLength(6), Validators.maxLength(6)]]
     })
   }
 
@@ -44,7 +44,7 @@ export class UsermanagerComponent {
   }
 
   submitForm(){
-    // console.log(this.myForm.controls.addresses.value);
+    // console.log(this.myForm.controls.addresses.controls);
     this.sendData.emit(this.myForm.value);
     this.addressList.clear();
     this.myForm.reset();
