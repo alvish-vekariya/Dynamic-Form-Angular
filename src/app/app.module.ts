@@ -8,12 +8,14 @@ import { UsermanagerComponent } from './usermanager/usermanager.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DatatableComponent } from './datatable/datatable.component';
 import { AgGridAngular } from 'ag-grid-angular';
+import { ActionsComponent } from './datatable/actions/actions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsermanagerComponent,
-    DatatableComponent
+    DatatableComponent,
+    ActionsComponent
   ],
   imports: [
     BrowserModule,
