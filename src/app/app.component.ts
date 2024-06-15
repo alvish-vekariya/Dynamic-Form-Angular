@@ -13,6 +13,10 @@ export class AppComponent implements OnInit {
   userData:any =[];
 
   ngOnInit(): void {
+    this.manageLocalStorage();
+  }
+
+  manageLocalStorage(){
     if(localStorage.getItem('userformData')){
       this.userData = JSON.parse(localStorage.getItem('userformData') as string);
     }else{
@@ -30,7 +34,9 @@ export class AppComponent implements OnInit {
 
   getFormData(value :any){
     // console.log(value);
-    this.userData = [...this.userData, value];
+    this.manageLocalStorage();
+    localStorage.clear();
+    this.userData = [...this.userData,value];
     localStorage.setItem('userformData', JSON.stringify(this.userData));
   }
 }
