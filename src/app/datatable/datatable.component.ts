@@ -42,7 +42,7 @@ export class DatatableComponent {
   };
 
   deleteUser() {
-    console.log('alvish');
+    // console.log('alvish');
     this.tableData = JSON.parse(localStorage.getItem('userformData') as string);
   }
 }
